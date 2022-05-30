@@ -21,15 +21,15 @@ CREATE TABLE IF NOT EXISTS movie (
 );
 
 CREATE TABLE IF NOT EXISTS premiere (
+    movie_id INT NOT NULL,
     country VARCHAR(100) NOT NULL,
     premiere_date date NOT NULL,
-    movie_id INT NOT NULL,
     PRIMARY KEY (movie_id),
     FOREIGN KEY (movie_id) REFERENCES movie(movie_id)
 );
 
 CREATE TABLE IF NOT EXISTS actorship (
-    character_role VARCHAR(30) NOT NULL,
+    character_role VARCHAR(50) NOT NULL,
     actor_id INT NOT NULL,
     movie_id INT NOT NULL,
     PRIMARY KEY (actor_id, movie_id),
